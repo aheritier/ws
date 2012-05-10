@@ -18,6 +18,9 @@
  */
 package org.exoplatform.ws.frameworks.json.impl;
 
+import gnu.trove.map.hash.THashMap;
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.commons.utils.ClassLoading;
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
@@ -47,7 +50,7 @@ import java.util.Map;
  */
 public class ObjectBuilder
 {
-   static final Collection<String> SKIP_METHODS = new HashSet<String>();
+   static final Collection<String> SKIP_METHODS = new THashSet<String>();
    static
    {
       // Since we need support for Groovy must skip this.
@@ -340,7 +343,7 @@ public class ObjectBuilder
             throw new JsonException("Can't find satisfied constructor for : " + mapClass);
          }
 
-         HashMap<String, Object> sourceMap = new HashMap<String, Object>(jsonObject.size());
+         Map<String, Object> sourceMap = new THashMap<String, Object>(jsonObject.size());
          Iterator<String> keys = jsonObject.getKeys();
          while (keys.hasNext())
          {

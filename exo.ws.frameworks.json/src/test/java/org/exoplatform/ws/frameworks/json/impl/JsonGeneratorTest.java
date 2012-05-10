@@ -18,6 +18,8 @@
  */
 package org.exoplatform.ws.frameworks.json.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.ws.frameworks.json.BeanWithBookEnum;
 import org.exoplatform.ws.frameworks.json.BeanWithSimpleEnum;
 import org.exoplatform.ws.frameworks.json.BeanWithTransientField;
@@ -104,7 +106,7 @@ public class JsonGeneratorTest extends JsonTest
 
    public void testMap() throws Exception
    {
-      Map<String, Book> m = new HashMap<String, Book>();
+      Map<String, Book> m = new THashMap<String, Book>();
       m.put("junit", junitBook);
       m.put("csharp", csharpBook);
       m.put("js", javaScriptBook);
@@ -191,13 +193,13 @@ public class JsonGeneratorTest extends JsonTest
       l.add(csharpBook);
       l.add(javaScriptBook);
 
-      Map<String, List<Book>> hu = new HashMap<String, List<Book>>();
+      Map<String, List<Book>> hu = new THashMap<String, List<Book>>();
       hu.put("1", l);
       hu.put("2", l);
       hu.put("3", l);
       mb.setMapList(hu);
 
-      Map<String, String> str = new HashMap<String, String>();
+      Map<String, String> str = new THashMap<String, String>();
       str.put("key1", "value1");
       str.put("key2", "value2");
       str.put("key3", "value3");

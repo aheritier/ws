@@ -18,20 +18,18 @@
  */
 package org.exoplatform.services.rest.impl.provider;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.BaseTest;
 import org.exoplatform.services.rest.impl.header.MediaTypeHelper;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.ext.MessageBodyReader;
-import javax.ws.rs.ext.MessageBodyWriter;
 
 /**
  * @author <a href="mailto:andrew00x@gmail.com">Andrey Parfonov</a>
@@ -51,7 +49,7 @@ public class ReaderEntityProviderTest extends BaseTest
       assertTrue(reader.isReadable(Reader.class, null, null, null));
       byte[] data = TEST_CYR.getBytes("windows-1251");
       InputStream in = new ByteArrayInputStream(data);
-      Map<String, String> p = new HashMap<String, String>(1);
+      Map<String, String> p = new THashMap<String, String>(1);
       p.put("charset", "windows-1251");
       MediaType mediaType = new MediaType("text", "plain", p);
       Reader result = (Reader)reader.readFrom(Reader.class, null, null, mediaType, null, in);

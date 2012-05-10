@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 import org.exoplatform.services.rest.GenericContainerRequest;
@@ -32,7 +34,6 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -417,7 +418,7 @@ public class ContainerRequest implements GenericContainerRequest
    {
       if (cookies == null)
       {
-         Map<String, Cookie> t = new HashMap<String, Cookie>();
+         Map<String, Cookie> t = new THashMap<String, Cookie>();
 
          for (String ch : getCookieHeaders())
          {

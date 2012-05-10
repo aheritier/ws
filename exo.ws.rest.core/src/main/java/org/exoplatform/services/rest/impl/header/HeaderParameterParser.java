@@ -18,8 +18,9 @@
  */
 package org.exoplatform.services.rest.impl.header;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.text.ParseException;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -97,7 +98,7 @@ public class HeaderParameterParser
          if (name != null && name.length() > 0)
          {
             if (m == null)
-               m = new HashMap<String, String>();
+               m = new THashMap<String, String>();
             m.put(name, value);
          }
 

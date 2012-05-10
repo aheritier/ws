@@ -18,11 +18,12 @@
  */
 package org.exoplatform.services.rest.impl.method;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.services.rest.method.TypeProducer;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
@@ -108,7 +109,7 @@ public abstract class BaseCollectionProducer implements TypeProducer
       if (collectionClass == List.class)
          return new ArrayList<Object>();
       else if (collectionClass == Set.class)
-         return new HashSet<Object>();
+         return new THashSet<Object>();
       else if (collectionClass == SortedSet.class)
          return new TreeSet<Object>();
       else

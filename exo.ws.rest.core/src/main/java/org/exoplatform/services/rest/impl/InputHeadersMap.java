@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.util.AbstractSet;
 import java.util.Collection;
 import java.util.Collections;
@@ -73,7 +75,7 @@ public final class InputHeadersMap extends HashMap<String, List<String>> impleme
       {
          throw new IllegalArgumentException("No null map accepted");
       }
-      this.m = new HashMap<String, List<String>>(m.size());
+      this.m = new THashMap<String, List<String>>(m.size());
       for (Map.Entry<String, List<String>> e : m.entrySet())
          this.m.put(e.getKey().toLowerCase(), Collections.unmodifiableList(e.getValue()));
    }

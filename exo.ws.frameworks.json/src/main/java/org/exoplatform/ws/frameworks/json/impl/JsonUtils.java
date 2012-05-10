@@ -18,9 +18,10 @@
  */
 package org.exoplatform.ws.frameworks.json.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.nio.charset.Charset;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -132,7 +133,7 @@ public final class JsonUtils
    /**
     * Map of known types.
     */
-   private static final Map<String, Types> KNOWN_TYPES = new HashMap<String, Types>();
+   private static final Map<String, Types> KNOWN_TYPES = new THashMap<String, Types>();
 
    static
    {

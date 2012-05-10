@@ -19,6 +19,7 @@
 
 package org.exoplatform.services.rest.ext.groovy;
 
+import gnu.trove.map.hash.THashMap;
 import groovy.lang.GroovyClassLoader;
 import groovy.lang.GroovyCodeSource;
 
@@ -49,7 +50,6 @@ import java.security.PrivilegedExceptionAction;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -92,7 +92,7 @@ public class GroovyJaxrsPublisher
 
    protected final GroovyClassLoaderProvider classLoaderProvider;
 
-   protected final Map<ResourceId, String> resources = Collections.synchronizedMap(new HashMap<ResourceId, String>());
+   protected final Map<ResourceId, String> resources = Collections.synchronizedMap(new THashMap<ResourceId, String>());
 
    public GroovyJaxrsPublisher(ResourceBinder binder, GroovyScriptInstantiator instantiator,
       GroovyClassLoaderProvider classLoaderProvider)

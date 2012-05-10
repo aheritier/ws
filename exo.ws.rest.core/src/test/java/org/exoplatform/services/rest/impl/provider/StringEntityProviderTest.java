@@ -18,13 +18,14 @@
  */
 package org.exoplatform.services.rest.impl.provider;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.BaseTest;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.ws.rs.core.MediaType;
@@ -46,7 +47,7 @@ public class StringEntityProviderTest extends BaseTest
    public void setUp() throws Exception
    {
       super.setUp();
-      Map<String, String> p = new HashMap<String, String>(1);
+      Map<String, String> p = new THashMap<String, String>(1);
       p.put("charset", "windows-1251");
       mediaType = new MediaType("text", "plain", p);
    }

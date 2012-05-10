@@ -18,8 +18,9 @@
  */
 package org.exoplatform.services.test.mock;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
@@ -37,7 +38,7 @@ public class MockHttpSession implements HttpSession
 {
 
    /** The attributes map. */
-   private Map<String, Object> attributes = new HashMap<String, Object>();
+   private Map<String, Object> attributes = new THashMap<String, Object>();
 
    /** The servlet context. */
    private ServletContext servletContext;

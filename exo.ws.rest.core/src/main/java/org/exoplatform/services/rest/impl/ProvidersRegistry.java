@@ -18,7 +18,8 @@
  */
 package org.exoplatform.services.rest.impl;
 
-import java.util.HashMap;
+import gnu.trove.map.hash.THashMap;
+
 import java.util.Map;
 
 /**
@@ -28,7 +29,7 @@ import java.util.Map;
 public class ProvidersRegistry
 {
 
-   protected Map<String, ApplicationProviders> all = new HashMap<String, ApplicationProviders>();
+   protected Map<String, ApplicationProviders> all = new THashMap<String, ApplicationProviders>();
 
    public void addProviders(ApplicationProviders ap)
    {

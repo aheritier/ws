@@ -18,6 +18,9 @@
  */
 package org.exoplatform.services.test.mock;
 
+import gnu.trove.map.hash.THashMap;
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 
@@ -27,8 +30,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
@@ -53,10 +55,10 @@ public class MockServletContext implements ServletContext
    private String name;
 
    /** The init params. */
-   private HashMap<String, String> initParams;
+   private Map<String, String> initParams;
 
    /** The attributes. */
-   private HashMap<String, Object> attributes;
+   private Map<String, Object> attributes;
 
    /** The context path. */
    private String contextPath;
@@ -80,8 +82,8 @@ public class MockServletContext implements ServletContext
    public MockServletContext(String name)
    {
       this.name = name;
-      this.initParams = new HashMap<String, String>();
-      this.attributes = new HashMap<String, Object>();
+      this.initParams = new THashMap<String, String>();
+      this.attributes = new THashMap<String, Object>();
    }
 
    /**
@@ -165,7 +167,7 @@ public class MockServletContext implements ServletContext
       if (!s.endsWith("/"))
          s = s + "/";
 
-      Set<String> set = new HashSet<String>();
+      Set<String> set = new THashSet<String>();
       set.add("/WEB-INF/");
 
       try

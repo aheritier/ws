@@ -19,6 +19,8 @@
 
 package org.exoplatform.services.rest.ext.management;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.management.spi.ManagedMethodMetaData;
 import org.exoplatform.management.spi.ManagedMethodParameterMetaData;
 import org.exoplatform.services.rest.ext.management.invocation.MethodInvoker;
@@ -26,7 +28,6 @@ import org.exoplatform.services.rest.ext.management.invocation.SimpleMethodInvok
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -52,7 +53,7 @@ public class RestResourceMethod
    public RestResourceMethod(ManagedMethodMetaData metaData)
    {
       List<RestResourceMethodParameter> parameters = new ArrayList<RestResourceMethodParameter>();
-      Set<String> parameterNames = new HashSet<String>();
+      Set<String> parameterNames = new THashSet<String>();
       for (ManagedMethodParameterMetaData parameterMD : metaData.getParameters())
       {
          parameters.add(new RestResourceMethodParameter(parameterMD));

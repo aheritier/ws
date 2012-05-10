@@ -19,6 +19,8 @@
 
 package org.exoplatform.services.rest.ext.management;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.management.annotations.ImpactType;
 import org.exoplatform.management.spi.ManagedMethodMetaData;
 import org.exoplatform.management.spi.ManagedPropertyMetaData;
@@ -36,7 +38,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -87,7 +88,7 @@ public class RestResource
       ManagedTypeMetaData managedType = managedResource.getMetaData();
 
       //
-      HashMap<String, RestResourceProperty> properties = new HashMap<String, RestResourceProperty>();
+      Map<String, RestResourceProperty> properties = new THashMap<String, RestResourceProperty>();
       for (ManagedPropertyMetaData managedProperty : managedType.getProperties()) {
          RestResourceProperty resourceProperty = new RestResourceProperty(managedProperty);
          properties.put(resourceProperty.getName(), resourceProperty);

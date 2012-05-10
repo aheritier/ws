@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.ApplicationContext;
 import org.exoplatform.services.rest.GenericContainerRequest;
 import org.exoplatform.services.rest.GenericContainerResponse;
@@ -26,7 +28,6 @@ import org.exoplatform.services.rest.impl.uri.UriComponent;
 
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -224,7 +225,7 @@ public class ApplicationContextImpl implements ApplicationContext
     */
    public Map<String, Object> getAttributes()
    {
-      return attributes == null ? attributes = new HashMap<String, Object>() : attributes;
+      return attributes == null ? attributes = new THashMap<String, Object>() : attributes;
    }
 
    /**
@@ -413,7 +414,7 @@ public class ApplicationContextImpl implements ApplicationContext
     */
    public Map<String, String> getProperties()
    {
-      return properties == null ? properties = new HashMap<String, String>() : properties;
+      return properties == null ? properties = new THashMap<String, String>() : properties;
    }
 
    /**

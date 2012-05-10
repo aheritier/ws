@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl.resource;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.services.rest.BaseTest;
 import org.exoplatform.services.rest.Filter;
 import org.exoplatform.services.rest.GenericContainerRequest;
@@ -36,7 +38,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.ws.rs.GET;
@@ -59,9 +60,9 @@ public class ApplicationTest extends BaseTest
    public static class Application1 extends javax.ws.rs.core.Application
    {
 
-      private final Set<Class<?>> perreq = new HashSet<Class<?>>();
+      private final Set<Class<?>> perreq = new THashSet<Class<?>>();
 
-      private final Set<Object> singletons = new HashSet<Object>();
+      private final Set<Object> singletons = new THashSet<Object>();
 
       public Application1()
       {
@@ -260,9 +261,9 @@ public class ApplicationTest extends BaseTest
    public static class Application2 extends Application
    {
 
-      private final Set<Class<?>> perreq = new HashSet<Class<?>>();
+      private final Set<Class<?>> perreq = new THashSet<Class<?>>();
 
-      private final Set<Object> singletons = new HashSet<Object>();
+      private final Set<Object> singletons = new THashSet<Object>();
 
       public Application2()
       {

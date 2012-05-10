@@ -18,7 +18,8 @@
  */
 package org.exoplatform.services.rest.ext.service;
 
-import java.util.HashSet;
+import gnu.trove.set.hash.THashSet;
+
 import java.util.Set;
 
 import javax.ws.rs.core.Application;
@@ -33,7 +34,7 @@ public class RestServicesListApplication extends Application
    @Override
    public Set<Class<?>> getClasses()
    {
-      Set<Class<?>> cls = new HashSet<Class<?>>();
+      Set<Class<?>> cls = new THashSet<Class<?>>();
       cls.add(RestServicesList.class);
       return cls;
    }

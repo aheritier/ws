@@ -18,11 +18,12 @@
  */
 package org.exoplatform.services.rest.uri;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.impl.uri.UriComponent;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -373,7 +374,7 @@ public class UriPattern
       String query, String fragment, Object[] values, boolean encode)
    {
 
-      Map<String, String> m = new HashMap<String, String>();
+      Map<String, String> m = new THashMap<String, String>();
       StringBuffer sb = new StringBuffer();
       int p = 0;
 

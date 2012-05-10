@@ -102,8 +102,8 @@ public class BaseWadlGeneratorImpl implements WadlGenerator
       //    public DataSource headAs()                                                                  
       //    throws IOException, MalformedURLException                                               
       // {                                                                                           
-      //    HashMap<String, Object> _queryParameterValues = new HashMap<String, Object>();          
-      //    HashMap<String, Object> _headerParameterValues = new HashMap<String, Object>();         
+      //    HashMap<String, Object> _queryParameterValues = new THashMap<String, Object>();          
+      //    HashMap<String, Object> _headerParameterValues = new THashMap<String, Object>();         
       //    String _url = _uriBuilder.buildUri(_templateAndMatrixParameterValues, _queryParameterVal
       //    DataSource _retVal = _dsDispatcher.doHEAD(_url, _headerParameterValues, "*/*");         
       //    return _retVal;                                                                         

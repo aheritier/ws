@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl.provider;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.commons.utils.ClassLoading;
 import org.exoplatform.container.component.BaseComponentPlugin;
 import org.exoplatform.container.xml.InitParams;
@@ -26,7 +28,6 @@ import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 import org.exoplatform.services.rest.provider.EntityProvider;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -46,7 +47,7 @@ public class EntityProviderComponentPlugin extends BaseComponentPlugin
    /**
     * See {@link EntityProvider}.
     */
-   private Set<Class<? extends EntityProvider>> eps = new HashSet<Class<? extends EntityProvider>>();
+   private Set<Class<? extends EntityProvider>> eps = new THashSet<Class<? extends EntityProvider>>();
 
    /**
     * @param params initialize parameters

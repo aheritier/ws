@@ -18,6 +18,8 @@
  */
 package org.exoplatform.ws.frameworks.json.impl;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.ws.frameworks.json.JsonParser;
 import org.exoplatform.ws.frameworks.json.value.JsonValue;
 import org.exoplatform.ws.frameworks.json.value.impl.ArrayValue;
@@ -29,7 +31,6 @@ import org.exoplatform.ws.frameworks.json.value.impl.StringValue;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -56,7 +57,7 @@ public class JsonParserTest extends JsonTest
       JsonValue jsonValue = handler.getJsonObject();
 
       assertTrue(jsonValue.isArray());
-      Set<String> s = new HashSet<String>();
+      Set<String> s = new THashSet<String>();
       for (Iterator<JsonValue> elements = jsonValue.getElements(); elements.hasNext();)
       {
          JsonValue next = elements.next();

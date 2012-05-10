@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.commons.utils.PrivilegedFileHelper;
 import org.exoplatform.commons.utils.PrivilegedSystemHelper;
 import org.exoplatform.commons.utils.SecurityHelper;
@@ -44,7 +46,6 @@ import java.io.File;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.security.PrivilegedAction;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -73,7 +74,7 @@ public final class RequestHandlerImpl implements RequestHandler, Startable
     * ApplicationContext and may be accessible via method
     * {@link ApplicationContextImpl#getProperties()}.
     */
-   private static final Map<String, String> properties = new HashMap<String, String>();
+   private static final Map<String, String> properties = new THashMap<String, String>();
 
    /**
     * See {@link RequestDispatcher}.

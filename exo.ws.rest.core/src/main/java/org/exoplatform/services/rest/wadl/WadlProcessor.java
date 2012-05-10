@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.wadl;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.ComponentLifecycleScope;
 import org.exoplatform.services.rest.impl.resource.AbstractResourceDescriptorImpl;
 import org.exoplatform.services.rest.method.MethodParameter;
@@ -34,7 +36,6 @@ import org.exoplatform.services.rest.wadl.research.RepresentationType;
 import org.exoplatform.services.rest.wadl.research.Resources;
 
 import java.net.URI;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -110,7 +111,7 @@ public final class WadlProcessor
          wadlGenerator.createResource(resourceDescriptor);
 
       // Keeps common parameters for resource.
-      Map<String, Param> wadlResourceParams = new HashMap<String, Param>();
+      Map<String, Param> wadlResourceParams = new THashMap<String, Param>();
 
       ResourceMethodMap<ResourceMethodDescriptor> resourceMethods = resourceDescriptor.getResourceMethods();
       for (List<ResourceMethodDescriptor> l : resourceMethods.values())
@@ -147,10 +148,10 @@ public final class WadlProcessor
    {
 
       // Keeps common parameter for sub-resource.
-      Map<String, Map<String, Param>> wadlCommonSubResourceParams = new HashMap<String, Map<String, Param>>();
+      Map<String, Map<String, Param>> wadlCommonSubResourceParams = new THashMap<String, Map<String, Param>>();
       // Mapping resource path to resource.
       Map<String, org.exoplatform.services.rest.wadl.research.Resource> wadlSubResources =
-         new HashMap<String, org.exoplatform.services.rest.wadl.research.Resource>();
+         new THashMap<String, org.exoplatform.services.rest.wadl.research.Resource>();
 
       SubResourceMethodMap subresourceMethods = resourceDescriptor.getSubResourceMethods();
       for (ResourceMethodMap<SubResourceMethodDescriptor> rmm : subresourceMethods.values())
@@ -165,7 +166,7 @@ public final class WadlProcessor
                if (wadlSubResource == null)
                {
                   wadlSubResource = wadlGenerator.createResource(path);
-                  Map<String, Param> wadlResourceParams = new HashMap<String, Param>();
+                  Map<String, Param> wadlResourceParams = new THashMap<String, Param>();
                   org.exoplatform.services.rest.wadl.research.Method wadlMethod =
                      processMethod(srmd, wadlResourceParams);
                   if (wadlMethod == null)

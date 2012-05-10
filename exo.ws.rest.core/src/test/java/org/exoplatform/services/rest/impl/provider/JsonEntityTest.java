@@ -18,8 +18,9 @@
  */
 package org.exoplatform.services.rest.impl.provider;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.BaseTest;
-import org.exoplatform.services.rest.generated.Book;
 import org.exoplatform.services.rest.impl.ContainerResponse;
 import org.exoplatform.services.rest.impl.MultivaluedMapImpl;
 import org.exoplatform.services.rest.tools.ByteArrayContainerResponseWriter;
@@ -31,7 +32,6 @@ import java.io.ByteArrayInputStream;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -234,7 +234,7 @@ public class JsonEntityTest extends BaseTest
          book2.setTitle("Collected Stories");
          book2.setAuthor("Gabriel Garcia Marquez");
          book2.setSendByPost(true);
-         Map<String, Book> m = new HashMap<String, Book>();
+         Map<String, Book> m = new THashMap<String, Book>();
          m.put("12345", book1);
          m.put("54321", book2);
          return m;
@@ -485,7 +485,7 @@ public class JsonEntityTest extends BaseTest
       JsonParserImpl parser = new JsonParserImpl();
       JsonDefaultHandler handler = new JsonDefaultHandler();
       parser.parse(new ByteArrayInputStream(writer.getBody()), handler);
-      ParameterizedType genericType = (ParameterizedType)new HashMap<String, Book>()
+      ParameterizedType genericType = (ParameterizedType)new THashMap<String, Book>()
       {
       }.getClass().getGenericSuperclass();
       //System.out.println(">>>>>" + genericType);

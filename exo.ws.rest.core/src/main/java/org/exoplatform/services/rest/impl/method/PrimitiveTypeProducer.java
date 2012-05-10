@@ -18,9 +18,10 @@
  */
 package org.exoplatform.services.rest.impl.method;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.lang.reflect.Method;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.ws.rs.core.MultivaluedMap;
@@ -50,7 +51,7 @@ public final class PrimitiveTypeProducer extends BaseTypeProducer
 
    static
    {
-      Map<String, Class<?>> m = new HashMap<String, Class<?>>(7);
+      Map<String, Class<?>> m = new THashMap<String, Class<?>>(7);
       m.put("boolean", Boolean.class);
       m.put("byte", Byte.class);
       m.put("short", Short.class);
@@ -63,7 +64,7 @@ public final class PrimitiveTypeProducer extends BaseTypeProducer
 
    static
    {
-      Map<String, Object> m = new HashMap<String, Object>(7);
+      Map<String, Object> m = new THashMap<String, Object>(7);
       m.put("boolean", Boolean.valueOf(false));
       m.put("byte", Byte.valueOf((byte)0));
       m.put("short", Short.valueOf((short)0));

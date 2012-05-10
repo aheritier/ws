@@ -18,6 +18,8 @@
  */
 package org.exoplatform.ws.frameworks.json.impl;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.commons.utils.SecurityHelper;
 import org.exoplatform.ws.frameworks.json.JsonGenerator;
 import org.exoplatform.ws.frameworks.json.impl.JsonUtils.Types;
@@ -39,7 +41,6 @@ import java.lang.reflect.Modifier;
 import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -51,7 +52,7 @@ import java.util.Set;
 public class JsonGeneratorImpl implements JsonGenerator
 {
 
-   static final Collection<String> SKIP_METHODS = new HashSet<String>();
+   static final Collection<String> SKIP_METHODS = new THashSet<String>();
 
    static
    {
@@ -386,7 +387,7 @@ public class JsonGeneratorImpl implements JsonGenerator
     */
    private static Set<String> getTransientFields(final Class<?> clazz)
    {
-      Set<String> set = new HashSet<String>();
+      Set<String> set = new THashSet<String>();
       
       Field[] fields = SecurityHelper.doPrivilegedAction(new PrivilegedAction<Field[]>()
       {

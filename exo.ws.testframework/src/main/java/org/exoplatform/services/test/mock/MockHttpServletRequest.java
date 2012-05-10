@@ -19,6 +19,8 @@
 
 package org.exoplatform.services.test.mock;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,11 +29,10 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -68,7 +69,7 @@ public class MockHttpServletRequest implements HttpServletRequest
    private CaseInsensitiveMultivaluedMap<String> headers = new CaseInsensitiveMultivaluedMap<String>();
 
    /** The parameters. */
-   private Map<String, List<String>> parameters = new HashMap<String, List<String>>();
+   private Map<String, List<String>> parameters = new THashMap<String, List<String>>();
 
    /** The session. */
    private HttpSession session;
@@ -83,7 +84,7 @@ public class MockHttpServletRequest implements HttpServletRequest
    private static final Pattern p = Pattern.compile("http://([^:]+?):([^/]+?)/([^/]+?)/(.*?)");
 
    /** The attributes. */
-   private Map<String, Object> attributes = new HashMap<String, Object>();
+   private Map<String, Object> attributes = new THashMap<String, Object>();
 
    private Principal principal;
 
@@ -123,8 +124,8 @@ public class MockHttpServletRequest implements HttpServletRequest
     */
    public void reset()
    {
-      parameters = new HashMap();
-      attributes = new HashMap();
+      parameters = new THashMap();
+      attributes = new THashMap();
    }
 
    /**
@@ -637,7 +638,7 @@ public class MockHttpServletRequest implements HttpServletRequest
 
    public static Map<String, List<String>> parseQueryString(String rawQuery)
    {
-      HashMap<String, List<String>> m = new HashMap<String, List<String>>();
+      Map<String, List<String>> m = new THashMap<String, List<String>>();
       if (rawQuery == null || rawQuery.length() == 0)
          return m;
       int p = 0;

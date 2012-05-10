@@ -19,6 +19,8 @@
 
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.commons.utils.ClassLoading;
 import org.exoplatform.container.component.BaseComponentPlugin;
 import org.exoplatform.container.xml.InitParams;
@@ -27,7 +29,6 @@ import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 import org.exoplatform.services.rest.method.MethodInvokerFilter;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -43,7 +44,7 @@ public class ExceptionMapperComponentPlugin extends BaseComponentPlugin
    private static final Log LOG = ExoLogger.getLogger("exo.ws.rest.core.ExceptionMapperComponentPlugin");
 
    /** List of {@link MethodInvokerFilter}. */
-   private Set<Class<? extends ExceptionMapper<?>>> emaps = new HashSet<Class<? extends ExceptionMapper<?>>>();
+   private Set<Class<? extends ExceptionMapper<?>>> emaps = new THashSet<Class<? extends ExceptionMapper<?>>>();
 
    /**
     * @param params initialize parameters from configuration

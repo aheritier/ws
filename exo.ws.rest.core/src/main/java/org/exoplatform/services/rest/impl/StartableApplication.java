@@ -19,6 +19,8 @@
 
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.container.ExoContainer;
 import org.exoplatform.container.ExoContainerContext;
 import org.exoplatform.services.rest.RequestFilter;
@@ -27,7 +29,6 @@ import org.exoplatform.services.rest.method.MethodInvokerFilter;
 import org.exoplatform.services.rest.resource.ResourceContainer;
 import org.picocontainer.Startable;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.ws.rs.core.Application;
@@ -48,9 +49,9 @@ public class StartableApplication extends Application implements Startable
 
    private ExoContainer container;
 
-   private Set<Class<?>> cls = new HashSet<Class<?>>();
+   private Set<Class<?>> cls = new THashSet<Class<?>>();
 
-   private Set<Object> singletons = new HashSet<Object>();
+   private Set<Object> singletons = new THashSet<Object>();
 
    public StartableApplication(ExoContainerContext containerContext)
    {

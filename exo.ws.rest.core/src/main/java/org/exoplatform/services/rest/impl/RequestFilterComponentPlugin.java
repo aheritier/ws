@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.commons.utils.ClassLoading;
 import org.exoplatform.container.component.BaseComponentPlugin;
 import org.exoplatform.container.xml.InitParams;
@@ -27,7 +29,6 @@ import org.exoplatform.services.log.Log;
 import org.exoplatform.services.rest.RequestFilter;
 import org.exoplatform.services.rest.RequestHandler;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -50,7 +51,7 @@ public class RequestFilterComponentPlugin extends BaseComponentPlugin
    /**
     * See {@link RequestFilter}.
     */
-   private Set<Class<? extends RequestFilter>> fs = new HashSet<Class<? extends RequestFilter>>();
+   private Set<Class<? extends RequestFilter>> fs = new THashSet<Class<? extends RequestFilter>>();
 
    /**
     * @param params initialize parameters from configuration.

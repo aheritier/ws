@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl.method;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.commons.utils.ClassLoading;
 import org.exoplatform.container.component.BaseComponentPlugin;
 import org.exoplatform.container.xml.InitParams;
@@ -27,7 +29,6 @@ import org.exoplatform.services.log.Log;
 import org.exoplatform.services.rest.RequestHandler;
 import org.exoplatform.services.rest.method.MethodInvokerFilter;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -49,7 +50,7 @@ public class MethodInvokerFilterComponentPlugin extends BaseComponentPlugin
    /**
     * List of {@link MethodInvokerFilter}.
     */
-   private Set<Class<? extends MethodInvokerFilter>> mifs = new HashSet<Class<? extends MethodInvokerFilter>>();
+   private Set<Class<? extends MethodInvokerFilter>> mifs = new THashSet<Class<? extends MethodInvokerFilter>>();
 
    /**
     * @param params initialize parameters from configuration

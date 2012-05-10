@@ -18,10 +18,11 @@
  */
 package org.exoplatform.services.rest.impl.uri;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.BaseTest;
 
 import java.net.URI;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.ws.rs.Path;
@@ -262,7 +263,7 @@ public class UriBuilderTest extends BaseTest
             "wrong");
       assertEquals(URI.create("http://localhost:8080/a/b/c/%2525x/%25y/z/%2525x"), u);
 
-      Map<String, Object> m = new HashMap<String, Object>();
+      Map<String, Object> m = new THashMap<String, Object>();
       m.put("foo", "%25x");
       m.put("bar", "%y");
       m.put("baz", "z");
@@ -274,7 +275,7 @@ public class UriBuilderTest extends BaseTest
             "%y", "z", "wrong");
       assertEquals(URI.create("http://localhost:8080/a/b/c/%25x/%25y/z/%25x"), u);
 
-      m = new HashMap<String, Object>();
+      m = new THashMap<String, Object>();
       m.put("foo", "%25x");
       m.put("bar", "%y");
       m.put("baz", "z");

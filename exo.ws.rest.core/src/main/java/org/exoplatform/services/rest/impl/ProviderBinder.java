@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 import org.exoplatform.services.rest.ComponentLifecycleScope;
@@ -61,7 +63,6 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
@@ -217,7 +218,7 @@ public class ProviderBinder implements ExtendedProviders
     * @see ExceptionMapper .
     */
    protected final Map<Class<? extends Throwable>, ObjectFactory<ProviderDescriptor>> exceptionMappers =
-      new HashMap<Class<? extends Throwable>, ObjectFactory<ProviderDescriptor>>();
+      new THashMap<Class<? extends Throwable>, ObjectFactory<ProviderDescriptor>>();
 
    /**
     * Context resolvers.
@@ -225,7 +226,7 @@ public class ProviderBinder implements ExtendedProviders
     * @see ContextResolver .
     */
    protected final Map<Class<?>, MediaTypeMap<ObjectFactory<ProviderDescriptor>>> contextResolvers =
-      new HashMap<Class<?>, MediaTypeMap<ObjectFactory<ProviderDescriptor>>>();
+      new THashMap<Class<?>, MediaTypeMap<ObjectFactory<ProviderDescriptor>>>();
 
    /**
     * Request filters.

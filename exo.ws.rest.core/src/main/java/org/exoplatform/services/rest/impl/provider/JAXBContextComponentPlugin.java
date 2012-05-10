@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl.provider;
 
+import gnu.trove.set.hash.THashSet;
+
 import org.exoplatform.commons.utils.ClassLoading;
 import org.exoplatform.container.component.BaseComponentPlugin;
 import org.exoplatform.container.xml.InitParams;
@@ -25,7 +27,6 @@ import org.exoplatform.container.xml.ValueParam;
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -47,7 +48,7 @@ public class JAXBContextComponentPlugin extends BaseComponentPlugin
    /**
     * Set of classes that will be bounded.
     */
-   private final Set<Class<?>> jcs = new HashSet<Class<?>>();
+   private final Set<Class<?>> jcs = new THashSet<Class<?>>();
 
    /**
     * @param params initialize parameters

@@ -18,6 +18,7 @@
  */
 package org.exoplatform.services.rest.ext.groovy;
 
+import gnu.trove.set.hash.THashSet;
 import groovy.lang.GroovyClassLoader;
 
 import org.codehaus.groovy.ast.ClassNode;
@@ -35,7 +36,6 @@ import java.net.URL;
 import java.security.CodeSource;
 import java.security.PrivilegedAction;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -236,7 +236,7 @@ public class ExtendedGroovyClassLoader extends GroovyClassLoader
       {
          CodeSource cs = new CodeSource(getCodeSource(), (java.security.cert.Certificate[])null);
          CompilationUnit cunit = createCompilationUnit(config, cs);
-         Set<SourceUnit> setSunit = new HashSet<SourceUnit>();
+         Set<SourceUnit> setSunit = new THashSet<SourceUnit>();
          for (int i = 0; i < sources.length; i++)
             setSunit.add(cunit.addSource(sources[i].getPath()));
          MultipleClassCollector collector = createMultipleCollector(cunit, setSunit);

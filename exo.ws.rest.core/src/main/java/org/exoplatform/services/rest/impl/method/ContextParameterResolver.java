@@ -18,11 +18,12 @@
  */
 package org.exoplatform.services.rest.impl.method;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.ApplicationContext;
 import org.exoplatform.services.rest.InitialProperties;
 import org.exoplatform.services.rest.impl.EnvironmentContext;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.ws.rs.core.Context;
@@ -73,7 +74,7 @@ public class ContextParameterResolver extends ParameterResolver<Context>
    /**
     * Mapping from class name to member of {@link CONTEXT_PARAMS}.
     */
-   private static final Map<String, CONTEXT_PARAMS> CONTEXT_PARAMETERS_MAP = new HashMap<String, CONTEXT_PARAMS>(4);
+   private static final Map<String, CONTEXT_PARAMS> CONTEXT_PARAMETERS_MAP = new THashMap<String, CONTEXT_PARAMS>(4);
 
    static
    {

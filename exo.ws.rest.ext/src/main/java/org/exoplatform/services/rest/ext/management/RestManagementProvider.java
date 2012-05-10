@@ -19,6 +19,8 @@
 
 package org.exoplatform.services.rest.ext.management;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.container.ExoContainerContext;
 import org.exoplatform.management.rest.annotations.RESTEndpoint;
 import org.exoplatform.management.spi.ManagedResource;
@@ -26,7 +28,6 @@ import org.exoplatform.management.spi.ManagementProvider;
 import org.exoplatform.services.rest.resource.ResourceContainer;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -49,7 +50,7 @@ public class RestManagementProvider implements ResourceContainer, ManagementProv
    private final ExoContainerContext context;
 
    /** . */
-   private final Map<ResourceKey, RestResource> resourceMap = new HashMap<ResourceKey, RestResource>();
+   private final Map<ResourceKey, RestResource> resourceMap = new THashMap<ResourceKey, RestResource>();
 
    public RestManagementProvider(ExoContainerContext context)
    {

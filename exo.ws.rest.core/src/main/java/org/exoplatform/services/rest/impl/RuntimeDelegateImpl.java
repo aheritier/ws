@@ -18,6 +18,8 @@
  */
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.services.rest.impl.header.AcceptLanguage;
 import org.exoplatform.services.rest.impl.header.AcceptLanguageHeaderDelegate;
 import org.exoplatform.services.rest.impl.header.AcceptMediaType;
@@ -35,7 +37,6 @@ import org.exoplatform.services.rest.impl.uri.UriBuilderImpl;
 
 import java.net.URI;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -61,7 +62,7 @@ public class RuntimeDelegateImpl extends RuntimeDelegate
     * HeaderDelegate cache.
     */
    @SuppressWarnings("unchecked")
-   private final Map<Class<?>, HeaderDelegate> headerDelegates = new HashMap<Class<?>, HeaderDelegate>();
+   private final Map<Class<?>, HeaderDelegate> headerDelegates = new THashMap<Class<?>, HeaderDelegate>();
 
    /**
     * Should be used only once for initialize.

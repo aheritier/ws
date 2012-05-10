@@ -18,14 +18,16 @@
  */
 package org.exoplatform.common.util;
 
+import gnu.trove.map.hash.THashMap;
+
 import org.exoplatform.commons.utils.Tools;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.xml.namespace.QName;
 
@@ -55,7 +57,7 @@ public class HierarchicalProperty
     */
    protected String value;
 
-   protected HashMap<String, String> attributes = new HashMap<String, String>();
+   protected Map<String, String> attributes = new THashMap<String, String>();
 
    /**
     * Constructor accepting String as property name, both prefixed (i.e.
@@ -225,7 +227,7 @@ public class HierarchicalProperty
    /**
     * @return all attributes
     */
-   public HashMap<String, String> getAttributes()
+   public Map<String, String> getAttributes()
    {
       return attributes;
    }

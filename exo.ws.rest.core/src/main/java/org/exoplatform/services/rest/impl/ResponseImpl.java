@@ -18,10 +18,11 @@
  */
 package org.exoplatform.services.rest.impl;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -152,7 +153,7 @@ public final class ResponseImpl extends Response
       /**
        * HTTP headers which can't be multivalued.
        */
-      private static final Map<HEADERS, String> HEADERS_MAP = new HashMap<HEADERS, String>();
+      private static final Map<HEADERS, String> HEADERS_MAP = new THashMap<HEADERS, String>();
 
       static
       {
@@ -185,7 +186,7 @@ public final class ResponseImpl extends Response
       /**
        * Not multivalued HTTP headers.
        */
-      private Map<String, Object> headers = new HashMap<String, Object>();
+      private Map<String, Object> headers = new THashMap<String, Object>();
 
       /**
        * Multivalued HTTP headers.
@@ -307,7 +308,7 @@ public final class ResponseImpl extends Response
          else if (cookies != null)
          {
             if (this.cookies == null)
-               this.cookies = new HashMap<String, NewCookie>();
+               this.cookies = new THashMap<String, NewCookie>();
             // new cookie overwrite old ones with the same name
             for (NewCookie c : cookies)
                this.cookies.put(c.getName(), c);

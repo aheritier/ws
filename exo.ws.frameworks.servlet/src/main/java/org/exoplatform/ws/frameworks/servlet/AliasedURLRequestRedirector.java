@@ -18,9 +18,10 @@
  */
 package org.exoplatform.ws.frameworks.servlet;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.io.IOException;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -49,7 +50,7 @@ public class AliasedURLRequestRedirector implements Filter
 
    private static String END = "}";
 
-   Map<String, String> replaceMap = new HashMap<String, String>();
+   Map<String, String> replaceMap = new THashMap<String, String>();
 
    /**
     * Filter configuration.

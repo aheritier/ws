@@ -19,8 +19,9 @@
 
 package org.exoplatform.services.rest.tools;
 
+import gnu.trove.set.hash.THashSet;
+
 import java.security.Principal;
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.ws.rs.core.SecurityContext;
@@ -39,7 +40,7 @@ public class DummySecurityContext implements SecurityContext
    public DummySecurityContext(Principal principal, Set<String> userRoles)
    {
       this.principal = principal;
-      this.userRoles= new HashSet<String>(userRoles);
+      this.userRoles= new THashSet<String>(userRoles);
    }
 
    /**
