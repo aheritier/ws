@@ -21,6 +21,7 @@ package org.exoplatform.services.rest.impl.provider;
 import gnu.trove.map.hash.THashMap;
 
 import org.exoplatform.services.rest.BaseTest;
+import org.exoplatform.services.rest.generated.Book;
 import org.exoplatform.services.rest.impl.ContainerResponse;
 import org.exoplatform.services.rest.impl.MultivaluedMapImpl;
 import org.exoplatform.services.rest.tools.ByteArrayContainerResponseWriter;

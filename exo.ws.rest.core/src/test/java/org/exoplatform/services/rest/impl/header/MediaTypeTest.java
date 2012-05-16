@@ -22,7 +22,7 @@ import gnu.trove.map.hash.THashMap;
 
 import org.exoplatform.services.rest.BaseTest;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import javax.ws.rs.core.MediaType;
 
@@ -43,7 +43,7 @@ public class MediaTypeTest extends BaseTest
 
    public void testToString2()
    {
-      HashMap<String, String> p = new THashMap<String, String>();
+      Map<String, String> p = new THashMap<String, String>();
       p.put("charset", "utf8");
       MediaType mime = new MediaType("text", "plain", p);
       MediaTypeHeaderDelegate hd = new MediaTypeHeaderDelegate();
