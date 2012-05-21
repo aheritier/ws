@@ -18,6 +18,9 @@
  */
 package org.exoplatform.services.rest.uri;
 
+import gnu.trove.list.TIntList;
+import gnu.trove.list.array.TIntArrayList;
+
 import org.exoplatform.services.rest.impl.uri.UriComponent;
 
 import java.util.ArrayList;
@@ -76,7 +79,7 @@ public class UriTemplateParser
    /**
     * Indexes regular expression capturing group.
     */
-   private List<Integer> groupIndexes = new ArrayList<Integer>();
+   private TIntList groupIndexes = new TIntArrayList();
 
    /**
     * @param template source URI template

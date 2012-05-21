@@ -23,6 +23,7 @@ import gnu.trove.map.hash.THashMap;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -153,7 +154,7 @@ public final class ResponseImpl extends Response
       /**
        * HTTP headers which can't be multivalued.
        */
-      private static final Map<HEADERS, String> HEADERS_MAP = new THashMap<HEADERS, String>();
+      private static final Map<HEADERS, String> HEADERS_MAP = new HashMap<HEADERS, String>();
 
       static
       {
@@ -186,7 +187,7 @@ public final class ResponseImpl extends Response
       /**
        * Not multivalued HTTP headers.
        */
-      private Map<String, Object> headers = new THashMap<String, Object>();
+      private Map<String, Object> headers = new HashMap<String, Object>();
 
       /**
        * Multivalued HTTP headers.

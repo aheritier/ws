@@ -36,6 +36,7 @@ import org.exoplatform.services.rest.wadl.research.RepresentationType;
 import org.exoplatform.services.rest.wadl.research.Resources;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -151,7 +152,7 @@ public final class WadlProcessor
       Map<String, Map<String, Param>> wadlCommonSubResourceParams = new THashMap<String, Map<String, Param>>();
       // Mapping resource path to resource.
       Map<String, org.exoplatform.services.rest.wadl.research.Resource> wadlSubResources =
-         new THashMap<String, org.exoplatform.services.rest.wadl.research.Resource>();
+         new HashMap<String, org.exoplatform.services.rest.wadl.research.Resource>();
 
       SubResourceMethodMap subresourceMethods = resourceDescriptor.getSubResourceMethods();
       for (ResourceMethodMap<SubResourceMethodDescriptor> rmm : subresourceMethods.values())
